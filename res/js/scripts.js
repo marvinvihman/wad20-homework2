@@ -40,7 +40,16 @@ function displayPosts() {
         let po = $("<div></div>").attr("class", "post");
         let author_info = $("<span></span>").attr("class", "post-author-info");
 
-        let post_author_img = $("<img>").attr("src", pos.author["avatar"]).attr("alt", "").attr("class", "post-author-info");
+        let post_author_img = $("<img>")
+            .attr("src", pos.author["avatar"])
+            .attr("alt", "")
+            .attr("width", "30px")
+            .attr("height", "30px")
+            .attr("border-radius", "100%")
+            .attr("object-fit", "cover")
+            .attr("object-position", "top")
+            .attr("margin", "5px");
+
         let name = $("<small></small>").text(pos.author["firstname"] + " " + pos.author["lastname"]);
 
         author_info.append(post_author_img, name);
