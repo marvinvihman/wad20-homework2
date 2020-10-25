@@ -13,9 +13,10 @@ $(function () {
         .catch(function () {
             alert("Error loading posts info")
         });
-    $(".like-button").click(function () {
-        $(this).toggleClass('.like-button.liked');
-    });
+
+    $(document).on("click", ".like-button", function (){
+        $(this).toggleClass(".like-button liked");
+    })
 })
 
 function loadPosts() {
@@ -33,6 +34,7 @@ function loadPosts() {
 }
 
 function displayPosts() {
+    $('section.main-container').empty();
     for (let pos of posts) {
 
         let po = $("<div></div>").attr("class", "post");
