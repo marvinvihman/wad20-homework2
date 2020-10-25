@@ -14,7 +14,7 @@ $(function () {
             alert("Error loading posts info")
         });
 
-    $(document).on("click", ".like-button", function (){
+    $(document).on("click", ".like-button", function () {
         $(this).toggleClass(".like-button liked");
     })
 })
@@ -40,15 +40,10 @@ function displayPosts() {
         let po = $("<div></div>").attr("class", "post");
         let author_info = $("<span></span>").attr("class", "post-author-info");
 
-        let post_author_img = $("<img>")
-            .attr("src", pos.author["avatar"])
-            .attr("alt", "")
-            .attr("width", "30px")
-            .attr("height", "30px")
-            .attr("border-radius", "100%")
-            .attr("object-fit", "cover")
-            .attr("object-position", "top")
-            .attr("margin", "5px");
+        let post_author_img = $("<img>", {
+            src: pos.author["avatar"],
+            class: "author-image"
+        })
 
         let name = $("<small></small>").text(pos.author["firstname"] + " " + pos.author["lastname"]);
 
@@ -61,7 +56,10 @@ function displayPosts() {
         if (pos.media != null) {
 
             if (pos.media["type"] === "image") {
-                let media_img = $("<img>").attr("src", pos.media["url"]).attr("alt", "");
+                let media_img = $("<img>", {
+                    src: pos.media["url"],
+                    alt: ""
+                });
                 media_div.append(media_img);
             }
 
@@ -78,8 +76,11 @@ function displayPosts() {
         }
 
         let button_div = $("<div></div>").attr("class", "post-actions");
-        let like_button = $("<button></button>").attr("type", "button").attr("name", "like")
-            .attr("class", "like-button").text(pos.likes);
+        let like_button = $("<button></button>", {
+            type: "button",
+            name: "like",
+            class: "like-button"
+        }).text(pos.likes);
         button_div.append(like_button);
 
         if (pos.media === null) {

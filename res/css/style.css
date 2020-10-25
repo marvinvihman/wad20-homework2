@@ -153,6 +153,15 @@ nav div.avatar-container {
     margin: 5px;
 }
 
+.author-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+    margin: 5px;
+}
+
 .post .post-author .post-author-info small {
     position: absolute;
     top: 10px;
@@ -206,7 +215,7 @@ nav div.avatar-container {
 .user-profile {
     width: 45%;
     margin: 2%;
-    float:left;
+    float: left;
     border-radius: 3%;
     border: 1px solid #8a8a8a;
 }
@@ -231,6 +240,7 @@ nav div.avatar-container {
     text-align: center;
     padding: 2px;
 }
+
 .follow-button {
     background-color: #86008a;
     border: 1px solid #86008a;
