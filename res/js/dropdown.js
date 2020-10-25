@@ -16,16 +16,28 @@ $(document).ready(function () {
                 class: 'dropdown'
             });
             menu.hide();
-            let name = $('<p></p>').text(data.firstname + " " + data.lastname);
-            name.appendTo(menu);
-            let email = $('<p></p>').text(data["email"]);
-            email.appendTo(menu);
+
+            let info = $('<p></p>', {
+                class: "dropdown-item"
+            }).text(data.firstname + " " + data.lastname);
+            info.appendTo(menu);
+
+            let mail = $('<p></p>', {
+                class: "dropdown-item"
+            }).text(data["email"]);
+            mail.appendTo(menu);
+
             let browse = $('<a></a>',{
-                href: "browse.html"
+                href: "browse.html",
+                class: "dropdown-item"
             }).text("Browse");
             browse.appendTo(menu);
+
+            $('<br>').appendTo(menu);
+
             let logout = $('<a></a>',{
-                href: "login.html"
+                href: "login.html",
+                class: "dropdown-item"
             }).text("Log Out");
             logout.appendTo(menu);
 
