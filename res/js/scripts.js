@@ -1,7 +1,6 @@
 let posts = [];
 
-$(function () {
-
+$(document).ready(function () {
     loadPosts()
         .then(function (response) {
             for (let post of response) {

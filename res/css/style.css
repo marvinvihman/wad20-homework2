@@ -250,3 +250,10 @@ nav div.avatar-container {
     background-color: #ffffff;
     color: #86008a;
 }
+
+.dropdown {
+    position: absolute;
+    margin-left: auto;
+    background-color: #f1f1f1;
+    min-width: 160px;
+}

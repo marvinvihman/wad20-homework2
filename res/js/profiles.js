@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     fetchProfiles()
         .then((data) => {
             data.forEach(profile => {
